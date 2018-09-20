@@ -4,6 +4,22 @@ import './App.css';
 
 class App extends Component {
 
+  constructor(props){
+		super(props);
+		this.state={
+			items:[],
+			isLoaded:true,
+			body:'',
+			id:'',
+			fields: {}
+		};
+
+		this.handleChange=this.handleChange.bind(this)
+		this.handleSubmit=this.handleSubmit.bind(this)
+	}
+
+
+
 //    buildUrl=(url, parameters) =>{
 //     let qs = "";
 //     for (const key in parameters) {
