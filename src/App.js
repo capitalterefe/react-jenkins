@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
 
-   buildUrl(url, parameters) {
+   buildUrl=(url, parameters) =>{
     let qs = "";
     for (const key in parameters) {
         if (parameters.hasOwnProperty(key)) {
