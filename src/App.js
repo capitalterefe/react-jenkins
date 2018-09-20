@@ -32,8 +32,8 @@ class App extends Component {
         buildUrl("http://automationap.aocms.gtwy.dcn:9090/job/AP_1.4/buildWithParameters?", {
           tag:"@demo",
           courtId:"cm3a",
-          PlanId="TESTAOM",
-          numberOfRunners=3,
+          PlanId:"TESTAOM",
+          numberOfRunners:3,
           auth: {
             'user': 'admin',
             'pass': 'admin'
