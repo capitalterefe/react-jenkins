@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Visual Studio Light",
+    "git.autofetch": true,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "files.exclude": {
+        "node_modules/": true,
+        "*/**/**.meta": true
+    },
+}

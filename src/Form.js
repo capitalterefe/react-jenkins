@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
+=======
+import logo from './logo.svg';
+>>>>>>> 51733b849f42f0476a2c205a4539f08494816b31
 import './App.css';
 
 
@@ -95,7 +99,11 @@ class Form extends Component {
 		 <p>
    			   {JSON.stringify(this.state.fields, null, 2)}
      	 </p>
+<<<<<<< HEAD
       <Form onSubmit = {fields => this.onSubmit(fields)} />
+=======
+      <Form onSubmit = {fields => this.onSubmit(fields)} 
+>>>>>>> 51733b849f42f0476a2c205a4539f08494816b31
 
 			      	<form onSubmit={this.handleOnSubmit}>
 					        <label>
