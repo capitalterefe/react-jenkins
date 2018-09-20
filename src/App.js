@@ -31,7 +31,7 @@ class App extends Component {
       return fetch(
         buildUrl("http://automationap.aocms.gtwy.dcn:9090/job/AP_1.4/buildWithParameters?", {
           tag:"@demo",
-          courtId="cm3a",
+          courtId:"cm3a",
           PlanId="TESTAOM",
           numberOfRunners=3,
           auth: {
