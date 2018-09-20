@@ -21,6 +21,25 @@ class App extends Component {
 //     return url;
 // }
 
+handleOnSubmit(event){
+  event.preventDefault()
+  const data=this.state
+  console.log("final data is ", data)
+  fetch('https://jsonplaceholder.typicode.com/posts',{
+      method: 'POST',
+      body: JSON.stringify(data)
+    
+    })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+  console.log('post data working',data)
+  
+  })
+
+}
+
     seeJenkinsStatus=()=>{
       console.log('Started Monitoring...');
       return fetch("")
@@ -52,9 +71,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to ACTS(ActioNet Continous Testing Service)</h1>
         </header>
-        <p className="App-intro">
-          Welcome...
-        </p>
+        <form onSubmit={this.handleOnSubmit}>
+					        <label>
+					          Name:
+					          <input type="text" name='body' value={this.state.value} onChange={this.handleChange} />
+					          <input type="text" name='id' value={this.state.value} onChange={this.handleChange} />
+					        </label>
+					        <input type="submit" value="Submit" />
+			      </form>
         <button onClick={this.callJenkins}>
         Fire Jenkins
        </button>

@@ -69,7 +69,7 @@ class Form extends Component {
 		this.setState({
 			fields: {
 				...this.state.fields
-				...updatedValue
+				//...this.updatedValue
 			}
 		});
 		console.log('app called:',fields)
