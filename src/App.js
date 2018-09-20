@@ -15,7 +15,7 @@ class App extends Component {
 		};
 
 		this.handleChange=this.handleChange.bind(this)
-		this.handleSubmit=this.handleSubmit.bind(this)
+		this.handleOnSubmit=this.handleOnSubmit.bind(this)
 	}
 
 
@@ -36,6 +36,13 @@ class App extends Component {
 
 //     return url;
 // }
+
+handleChange(event){
+  event.preventDefault()
+  this.setState({
+    [event.target.name]: event.target.value
+  })
+}
 
 handleOnSubmit(event){
   event.preventDefault()
