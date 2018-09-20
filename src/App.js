@@ -20,6 +20,12 @@ class App extends Component {
 
     return url;
 }
+
+    seeJenkinsStatus=()=>{
+      console.log('Started Monitoring...');
+      return fetch("")
+
+    }
     callJenkins=()=>{
       console.log('fired Jenkins');
       return fetch(
