@@ -12,7 +12,7 @@ export default class Form extends React.Component {
   onSubmitData= (event)=> {
 	  event.preventDefault();
 	  const data=this.state
-  console.log("final data is ",data)
+  console.log("final data is ",data.firstName)
   fetch('https://jsonplaceholder.typicode.com/users')
   .then(function(response){
     return response.json();
