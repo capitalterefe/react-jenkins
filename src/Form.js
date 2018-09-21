@@ -14,11 +14,7 @@ export default class Form extends React.Component {
 	
 
   console.log("final data is ",this.state)
-  fetch('https://jsonplaceholder.typicode.com/posts',{
-      method: 'POST',
-      body: JSON.stringify(this.state)
-    
-    })
+  fetch('https://jsonplaceholder.typicode.com/users')
   .then(function(response){
     return response.json();
   })
