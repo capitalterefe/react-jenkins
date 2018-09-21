@@ -39,7 +39,7 @@ class App extends Component {
       <div className="App">
         <Form onChange={fields => this.onChange(fields)} />
         <p>
-          {JSON.stringify(this.state.fields.users, null, 2)}
+          {JSON.stringify(this.state.fields, null, 2)}
         </p>
       </div>
     );
