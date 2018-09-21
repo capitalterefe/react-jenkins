@@ -90,7 +90,7 @@ export default class Form extends React.Component {
         />
         <br />
         <button onClick={e => this.onSubmit(e)}>Submit</button>
-		<button onClick={e => this.onSubmitData}>CALL API</button>
+		<button onClick={e => this.onSubmitData(e)}>CALL API</button>
       </form>
     );
   }
