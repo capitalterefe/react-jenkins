@@ -13,7 +13,7 @@ class App extends Component {
 			body:'',
 			id:'',
       fields: {},
-      data: {}
+      users: {}
 		};
 
 	//	this.handleChange=this.handleChange.bind(this)
@@ -32,12 +32,14 @@ class App extends Component {
     });
   };
 
+  
+
   render() {
     return (
       <div className="App">
         <Form onChange={fields => this.onChange(fields)} />
         <p>
-          {JSON.stringify(this.state.fields, null, 2)}
+          {JSON.stringify(this.state.fields.users, null, 2)}
         </p>
       </div>
     );

@@ -6,7 +6,8 @@ export default class Form extends React.Component {
     lastName: "",
     username: "",
     email: "",
-    password: ""
+	password: "",
+	users:{}
   };
 
   onSubmitData= (event)=> {
@@ -18,6 +19,9 @@ export default class Form extends React.Component {
     return response.json();
   })
   .then(function(outputview){
+	this.setState({
+		users : outputview
+	  });
   console.log('post data working',outputview)
   
   })
@@ -25,7 +29,8 @@ export default class Form extends React.Component {
 
 
   change = e => {
-    this.props.onChange({ [e.target.name]: e.target.value });
+	this.props.onChange({ [e.target.name]: e.target.value });
+
     this.setState({
       [e.target.name]: e.target.value
     });
