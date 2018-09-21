@@ -9,11 +9,10 @@ export default class Form extends React.Component {
     password: ""
   };
 
-  onSubmitData= data => {
-	
-	
-
-  console.log("final data is ",this.state)
+  onSubmitData= (event)=> {
+	  event.preventDefault();
+	  const data=this.state
+  console.log("final data is ",data)
   fetch('https://jsonplaceholder.typicode.com/users')
   .then(function(response){
     return response.json();
