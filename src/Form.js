@@ -9,6 +9,26 @@ export default class Form extends React.Component {
     password: ""
   };
 
+  onSubmitData= data => {
+	e.preventDefault
+	
+
+  console.log("final data is ",data)
+  fetch('https://jsonplaceholder.typicode.com/posts',{
+      method: 'POST',
+      body: JSON.stringify(this.data)
+    
+    })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(outputview){
+  console.log('post data working',outputview)
+  
+  })
+
+
+
   change = e => {
     this.props.onChange({ [e.target.name]: e.target.value });
     this.setState({
@@ -33,17 +53,7 @@ export default class Form extends React.Component {
       email: this.state.email,
       password: this.state.password
 	});
-	
-
-	this.pops.onSubmitData({
-		firstName: this.state.firstName,
-		lastName:this.state.lastName,
-		username: this.state.username,
-		email: this.state.email,
-		password: this.state.password
-
-	});
-  };
+	  };
 
   render() {
     return (
@@ -85,6 +95,7 @@ export default class Form extends React.Component {
         />
         <br />
         <button onClick={e => this.onSubmit(e)}>Submit</button>
+		<button onClick={e => this.onSubmitData(e)}>CALL API</button>
       </form>
     );
   }

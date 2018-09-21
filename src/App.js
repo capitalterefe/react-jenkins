@@ -39,7 +39,6 @@ class App extends Component {
         <p>
           {JSON.stringify(this.state.fields, null, 2)}
         </p>
-        <button onSubmit={data=>this.onSubmitData(data)}/>
       </div>
     );
   }
@@ -71,27 +70,6 @@ class App extends Component {
 // }
 
 
-onSubmitData=dataInput=>{
-    this.setState({
-    data : {
-      ...this.state.data,
-      ...dataInput
-    }
-  });
-
-  console.log("final data is ",this.data)
-  fetch('https://jsonplaceholder.typicode.com/posts',{
-      method: 'POST',
-      body: JSON.stringify(this.data)
-    
-    })
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(outputview){
-  console.log('post data working',outputview)
-  
-  })
 
 }
 
@@ -148,7 +126,7 @@ onSubmitData=dataInput=>{
 
 
 
-}
+
 
 
 
