@@ -46,14 +46,17 @@ export default class Form extends React.Component {
       lastName: "",
       username: "",
       email: "",
-      password: ""
+	  password: "",
+	  users:{intital:true}
     });
     this.props.onChange({
 		firstName: "",
 		lastName: "",
 		username: "",
 		email: "",
-		password: ""
+		password: "",
+		users:{intital:true}
+
 	});
 	  };
 
