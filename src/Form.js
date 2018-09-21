@@ -10,7 +10,7 @@ export default class Form extends React.Component {
   };
 
   onSubmitData= data => {
-	e.preventDefault
+	
 	
 
   console.log("final data is ",data)
