@@ -82,14 +82,14 @@ onSubmitData=dataInput=>{
   console.log("final data is ",this.data)
   fetch('https://jsonplaceholder.typicode.com/posts',{
       method: 'POST',
-      body: JSON.stringify(data)
+      body: JSON.stringify(this.data)
     
     })
   .then(function(response){
     return response.json();
   })
-  .then(function(data){
-  console.log('post data working',data)
+  .then(function(outputview){
+  console.log('post data working',outputview)
   
   })
 
