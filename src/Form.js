@@ -24,7 +24,7 @@ export default class Form extends React.Component {
   });
   
 	
-  console.log('post data working',this.users)
+  console.log('post data working',users)
   
 
   }

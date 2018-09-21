@@ -41,6 +41,9 @@ class App extends Component {
         <p>
           {JSON.stringify(this.state.fields, null, 2)}
         </p>
+        <p>
+          {JSON.stringify(this.state.users, null, 2)}
+        </p>
       </div>
     );
   }
