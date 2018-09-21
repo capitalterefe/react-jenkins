@@ -19,19 +19,19 @@ export default class Form extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     // this.props.onSubmit(this.state);
-    // this.setState({
-    //   firstName: "",
-    //   lastName: "",
-    //   username: "",
-    //   email: "",
-    //   password: ""
-    // });
-    this.props.onChange({
+    this.setState({
       firstName: "",
       lastName: "",
       username: "",
       email: "",
       password: ""
+    });
+    this.props.onChange({
+      firstName: this.state.firstName,
+      lastName:this.state.lastName,
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
     });
   };
 
