@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
+import Form from "./Form";
 
 class App extends Component {
 
@@ -14,9 +15,32 @@ class App extends Component {
 			fields: {}
 		};
 
-		this.handleChange=this.handleChange.bind(this)
-		this.handleOnSubmit=this.handleOnSubmit.bind(this)
-	}
+	//	this.handleChange=this.handleChange.bind(this)
+	//	this.handleOnSubmit=this.handleOnSubmit.bind(this)
+  }
+  
+
+  //-----------------------------
+
+  onChange = updatedValue => {
+    this.setState({
+      fields: {
+        ...this.state.fields,
+        ...updatedValue
+      }
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Form onChange={fields => this.onChange(fields)} />
+        <p>
+          {JSON.stringify(this.state.fields, null, 2)}
+        </p>
+      </div>
+    );
+  }
 
 
 
@@ -37,13 +61,14 @@ class App extends Component {
 //     return url;
 // }
 
-handleChange(event){
-  event.preventDefault()
-  this.setState({
-    [event.target.name]: event.target.value
-  })
-}
+// handleChange(event){
+//   event.preventDefault()
+//   this.setState({
+//     [event.target.name]: event.target.value
+//   })
+// }
 
+/*
 handleOnSubmit(event){
   event.preventDefault()
   const data=this.state
@@ -62,7 +87,8 @@ handleOnSubmit(event){
   })
 
 }
-
+*/
+/*
     seeJenkinsStatus=()=>{
       console.log('Started Monitoring...');
       return fetch("")
@@ -86,8 +112,8 @@ handleOnSubmit(event){
         }
     
     }
-
-  render() {
+*/
+ /* render() {
     return (
       <div className="App">
         <header className="App-header">
@@ -108,6 +134,20 @@ handleOnSubmit(event){
       </div>
     );
   }
+*/
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
 
 export default App;

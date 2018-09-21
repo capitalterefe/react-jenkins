@@ -1,115 +1,81 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
 
+export default class Form extends React.Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: ""
+  };
 
-class Form extends Component {
+  change = e => {
+    this.props.onChange({ [e.target.name]: e.target.value });
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
-	constructor(props){
-		super(props);
-		this.state={
-			items:[],
-			isLoaded:true,
-			body:'',
-			id:'',
-			fields: {}
-		};
-
-		this.handleChange=this.handleChange.bind(this)
-		this.handleSubmit=this.handleSubmit.bind(this)
-	}
-
-		handleChange(event){
-				event.preventDefault()
-				this.setState({
-					[event.target.name]: event.target.value
-				})
-		}
-
-		handleOnSubmit(event){
-				event.preventDefault()
-				const data=this.state
-				console.log("final data is ", data)
-				fetch('https://jsonplaceholder.typicode.com/posts',{
-						method: 'POST',
-						body: JSON.stringify(data)
-					
-					})
-				.then(function(response){
-					return response.json();
-				})
-				.then(function(data){
-				console.log('post data working',data)
-				
-				})
-		
-	}
-	
-
-	componentDidMount(){
-				// fetch('https://jsonplaceholder.typicode.com/users')
-				// .then(res=>res.json())
-				// .then(json=>{
-				// 	this.setState({
-				// 		isLoaded:true,
-				// 			items:json,
-				// 	})
-				// });
-
-
-				this.setState({
-					auth: "jenkins_user_email:jenkins_user_password",
-					parameter1: "value1"
-				})
-	}
-
-
-
-
-	onChange = updatedValue => {
-		this.setState({
-			fields: {
-				...this.state.fields
-				//...this.updatedValue
-			}
-		});
-		console.log('app called:',fields)
-	};
-
-	
-
+  onSubmit = e => {
+    e.preventDefault();
+    // this.props.onSubmit(this.state);
+    this.setState({
+      firstName: "",
+      lastName: "",
+      username: "",
+      email: "",
+      password: ""
+    });
+    this.props.onChange({
+      firstName: "",
+      lastName: "",
+      username: "",
+      email: "",
+      password: ""
+    });
+  };
 
   render() {
-		var{isLoaded, items,body,id}=this.state;
-        
-		if(!isLoaded){
-			return <div>Loadding..</div>
-
-		}else{
-
     return (
-      <div className="App">
-		<ul>
-			{items.map(item=>(<li key={item.id}>{item.name}</li>))}
-
-		</ul>
-		 <p>
-   			   {JSON.stringify(this.state.fields, null, 2)}
-     	 </p>
-      <Form onSubmit = {fields => this.onSubmit(fields)} />
-
-			      	<form onSubmit={this.handleOnSubmit}>
-					        <label>
-					          Name:
-					          <input type="text" name='body' value={this.state.value} onChange={this.handleChange} />
-					          <input type="text" name='id' value={this.state.value} onChange={this.handleChange} />
-					        </label>
-					        <input type="submit" value="Submit" />
-			      </form>
-			</div>
-
+      <form>
+        <input
+          name="firstName"
+          placeholder="First name"
+          value={this.state.firstName}
+          onChange={e => this.change(e)}
+        />
+        <br />
+        <input
+          name="lastName"
+          placeholder="Last name"
+          value={this.state.lastName}
+          onChange={e => this.change(e)}
+        />
+        <br />
+        <input
+          name="username"
+          placeholder="Username"
+          value={this.state.username}
+          onChange={e => this.change(e)}
+        />
+        <br />
+        <input
+          name="email"
+          placeholder="Email"
+          value={this.state.email}
+          onChange={e => this.change(e)}
+        />
+        <br />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={this.state.password}
+          onChange={e => this.change(e)}
+        />
+        <br />
+        <button onClick={e => this.onSubmit(e)}>Submit</button>
+      </form>
     );
-		}
   }
 }
-
-export default App;
