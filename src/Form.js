@@ -18,7 +18,7 @@ export default class Form extends React.Component {
   .then(res=>res.json())
   .then (json=>{
 	this.setState({
-		users : outputview
+		users : json
 	  })
 
   });
