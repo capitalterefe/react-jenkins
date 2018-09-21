@@ -15,16 +15,18 @@ export default class Form extends React.Component {
 	  const data=this.state
   console.log("final data is ",data.firstName)
   fetch('https://jsonplaceholder.typicode.com/users')
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(outputview){
+  .then(res=>res.json())
+  .then (json=>{
 	this.setState({
 		users : outputview
-	  });
-  console.log('post data working',outputview)
+	  })
+
+  });
   
-  })
+	
+  console.log('post data working',this.users)
+  
+
   }
 
 
