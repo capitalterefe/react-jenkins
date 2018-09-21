@@ -32,7 +32,17 @@ export default class Form extends React.Component {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password
-    });
+	});
+	
+
+	this.pops.onSubmitData({
+		firstName: this.state.firstName,
+		lastName:this.state.lastName,
+		username: this.state.username,
+		email: this.state.email,
+		password: this.state.password
+
+	});
   };
 
   render() {

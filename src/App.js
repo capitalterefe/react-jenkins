@@ -12,7 +12,8 @@ class App extends Component {
 			isLoaded:true,
 			body:'',
 			id:'',
-			fields: {}
+      fields: {},
+      data:{}
 		};
 
 	//	this.handleChange=this.handleChange.bind(this)
@@ -38,6 +39,7 @@ class App extends Component {
         <p>
           {JSON.stringify(this.state.fields, null, 2)}
         </p>
+        <button onSubmit={data=>this.onSubmitData(data)}/>
       </div>
     );
   }
@@ -68,10 +70,16 @@ class App extends Component {
 //   })
 // }
 
-/*
-handleOnSubmit(event){
+
+onSubmitData=dataInput=>{
   event.preventDefault()
-  const data=this.state
+  this.setState({
+    data: {
+      ...this.state.data,
+      ...dataInput
+    }
+  });
+
   console.log("final data is ", data)
   fetch('https://jsonplaceholder.typicode.com/posts',{
       method: 'POST',
@@ -87,7 +95,7 @@ handleOnSubmit(event){
   })
 
 }
-*/
+
 /*
     seeJenkinsStatus=()=>{
       console.log('Started Monitoring...');
