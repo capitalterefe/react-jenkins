@@ -13,7 +13,7 @@ class App extends Component {
 			body:'',
 			id:'',
       fields: {},
-      data:{}
+      data: {}
 		};
 
 	//	this.handleChange=this.handleChange.bind(this)
@@ -73,13 +73,13 @@ class App extends Component {
 
 onSubmitData=dataInput=>{
     this.setState({
-    data: {
+    data : {
       ...this.state.data,
       ...dataInput
     }
   });
 
-  console.log("final data is ", data)
+  console.log("final data is ",this.data)
   fetch('https://jsonplaceholder.typicode.com/posts',{
       method: 'POST',
       body: JSON.stringify(data)
