@@ -72,8 +72,7 @@ class App extends Component {
 
 
 onSubmitData=dataInput=>{
-  event.preventDefault()
-  this.setState({
+    this.setState({
     data: {
       ...this.state.data,
       ...dataInput
